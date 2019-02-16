@@ -1,6 +1,20 @@
 spring:
   thymeleaf:
     cache: false
-#  jpa:
-#    hibernate:
-#      ddl-auto: none
+taco:
+  orders:
+    pageSize: 10
+logging:
+  level: debug
+
+---
+spring:
+  profiles: prod
+
+  datasource:
+    url: jdbc:mysql://localhost/tacocloud
+    username: tacocloud
+    password: tacopassword
+
+logging:
+  level: warn
